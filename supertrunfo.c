@@ -8,10 +8,10 @@ int main() {
     // Área para definição das variáveis para armazenar as propriedades das cidades
     int populacao1, ptur1;
     char estado1, codigo1[4], cidade1[50];
-    float area1, pib1;
+    float area1, pib1, densidade1, pibcap1;
     int populacao2, ptur2;
     char estado2, codigo2[4], cidade2[50];
-    float area2, pib2;
+    float area2, pib2, densidade2, pibcap2;
 
     // Área para entrada de dados
     printf("INSIRA AS IMFORMAÇÕES DA PRIMEIRA CARTA. \nInforme a letra que representa o Estado: \n");
@@ -35,6 +35,9 @@ int main() {
     printf("Informe quantos pontos turísticos o Estado possui: \n");
     scanf("%d", &ptur1);
 
+    densidade1 = (float) populacao1 / area1;
+    pibcap1 = (float) pib1 / populacao1;
+
     printf("INSIRA AS INFORMAÇÕES DA SEGUNDA CARTA. \nInforme a letra que representa o Estado: \n");
     scanf(" %c", &estado2);
     
@@ -55,16 +58,17 @@ int main() {
     
     printf("Informe quantos pontos turísticos o Estado possui: \n");
     scanf("%d", &ptur2);
+
+    densidade2 = (float) populacao2 / area2;
+    pibcap2 = (float) pib2 / populacao2;
     
     // Área para exibição dos dados da cidade
     printf("\nINFORMAÇÕES DAS CARTAS:");
-    printf("\n\nCarta 1: \nEstado: %c \nCódigo: %s \nNome da Cidade: %s"
-           "\nPopulação: %d \nÁrea: %.2f Km² \nPIB: R$ %.2f"
-           "\nNúmero de pontos turísticos: %d",estado1,codigo1,cidade1,populacao1,area1,pib1,ptur1);
+    printf("\n\nCarta 1: \nEstado: %c \nCódigo: %s \nNome da Cidade: %s \nPopulação: %d \nÁrea: %.2f Km² \nPIB: R$ %.2f"
+           "\nNúmero de pontos turísticos: %d \nDensidade Populacional: %.2f Hab/Km² \nPIB per Capita: R$ %.2f",estado1,codigo1,cidade1,populacao1,area1,pib1,ptur1,densidade1,pibcap1);
     
-    printf("\n\nCarta 2: \nEstado: %c \nCódigo: %s \nNome da Cidade: %s"
-           "\nPopulação: %d \nÁrea: %.2f Km² \nPIB: R$ %.2f"
-           "\nNúmero de pontos turísticos: %d",estado2,codigo2,cidade2,populacao2,area2,pib2,ptur2);
+    printf("\n\nCarta 2: \nEstado: %c \nCódigo: %s \nNome da Cidade: %s \nPopulação: %d \nÁrea: %.2f Km² \nPIB: R$ %.2f"
+           "\nNúmero de pontos turísticos: %d \nDensidade Populacional: %.2f Hab/Km² \nPIB per Capita: R$ %.2f",estado2,codigo2,cidade2,populacao2,area2,pib2,ptur2,densidade2,pibcap2);
 
 
 return 0;
